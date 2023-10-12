@@ -1,0 +1,19 @@
+{% load menu_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная страница</title>
+</head>
+<body>
+    <div id="main_menu">
+        <ul>
+            {% draw_menu 'main_menu' request.path %}
+        </ul>
+    </div>
+
+    <div id="content">
+        <!-- Здесь может быть контент вашей главной страницы -->
+    </div>
+</body>
+</html>
