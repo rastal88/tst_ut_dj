@@ -8,6 +8,7 @@ git clone https://github.com/rastal88/tst_ut_dj.git
 cd test_ut_dj
 ```
 2. Установка
+   
 Установите и активируйте виртуальное окружение
 ```bash
 python -m venv venv
@@ -20,12 +21,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 3.Запуск
+
 Перейдите в дерикторию с файлом manage.py
 Проведите миграции
 ```bash
 python manage.py migrate
 ```
-Создаете суперпользователя(введите имя и пороль)
+Создайте суперпользователя(введите имя и пороль)
 ```bash
 python manage.py createsuperuser
 ```
@@ -34,7 +36,8 @@ python manage.py createsuperuser
 ```bash
 python manage.py ranserver
 ```
-Введите в браузере http://127.0.0.1:8000/admin и зайдите в админ-панель. 
+Введите в браузере http://127.0.0.1:8000/admin и зайдите в админ-панель.
+
 Добавьте меню согласно вашим требованиям и проверьте работу на главной странице сайта : http://127.0.0.1:8000
 
 ## Условия тестового задания
