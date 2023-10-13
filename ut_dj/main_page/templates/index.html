@@ -1,19 +1,70 @@
 {% load menu_tags %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Главная страница</title>
-</head>
-<body>
-    <div id="main_menu">
-        <ul>
-            {% draw_menu 'main_menu' request.path %}
-        </ul>
-    </div>
+<style>
+    li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    }
 
-    <div id="content">
-        <!-- Здесь может быть контент вашей главной страницы -->
-    </div>
-</body>
-</html>
+    /* Убрать маркеры списка */
+    li::before {
+       content: none;
+    }
+
+    /* Уменьшить отступы для ссылок и добавить рамку для активного элемента */
+    li a {
+        text-decoration: none;
+        color: #333;
+        padding: 5px 10px;
+        display: block;
+        border: 1px solid transparent;
+        border-radius: 5px;
+    }
+
+    /* Стили для активного элемента меню */
+    li.active a {
+        background-color: #007BFF;
+        color: #fff;
+        border: 1px solid #007BFF;
+    }
+
+    /* Стили для подменю */
+    ul ul {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+    }
+
+    /* Убрать лишние отступы внутри подменю */
+    ul ul li {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Стили для элементов подменю */
+    ul ul li a {
+       text-decoration: none;
+       color: #333;
+       display: block;
+       padding: 5px 10px;
+       border: 1px solid transparent;
+       border-radius: 5px;
+    }
+
+    /* Стили для активного элемента в подменю */
+    ul ul li.active a {
+       background-color: #007BFF;
+       color: #fff;
+       border: 1px solid #007BFF;
+    }
+    </style>
+
+<div id="main_menu">
+    {% draw_menu 'main_menu' request.path %}
+</div>
