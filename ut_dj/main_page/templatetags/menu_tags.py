@@ -5,16 +5,6 @@ from main_page.models import MenuItem
 
 register = template.Library()
 
-@register.simple_tag
-def draw_menu(menu_name):
-    try:
-        menu_items = MenuItem.objects.filter(title=menu_name)
-        if menu_items:
-            return render_menu(menu_items[0])
-    except MenuItem.DoesNotExist:
-        pass
-    return ''
-
 
 def render_menu(menu_item, current_path):
     is_active = current_path == menu_item.get_absolute_url()
@@ -48,3 +38,6 @@ def draw_menu(menu_name, current_path):
     except MenuItem.DoesNotExist:
         pass
     return ''
+
+
+
